@@ -1,9 +1,9 @@
 terraform {
     backend "azurerm" {
-        resource_group_name = "sunil_rg"
-        storage_account_name = "sunilstg2025"
-        container_name = "container2025"
-        key = "rg.terraform.tfstate"
+        resource_group_name = "sumit"
+        storage_account_name = "sumit123456"
+        container_name = "sumit123456"
+        key = "rg.tfstate"
     }
 
   required_providers {
