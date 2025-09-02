@@ -14,12 +14,12 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v3
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.5.7
+          terraform_version: 1.11.4
 
       - name: Azure Login
         uses: azure/login@v2
