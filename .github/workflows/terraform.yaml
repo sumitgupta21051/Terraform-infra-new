@@ -28,6 +28,12 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: environment/dev
+        with:
+          azure_credentials: {{ secrets.AZURE_CREDENTIALS }}
+          resource_group_name: sumit
+          container_name: sumit123456
+          storage_account_name: sumit123456
+          file_name: dev.tfstate
 
       - name: Terraform Validate
         run: terraform validate
