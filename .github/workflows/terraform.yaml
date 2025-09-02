@@ -26,6 +26,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
+          
       - name: Terraform Init
         run: terraform init
         working-directory: environment/dev
