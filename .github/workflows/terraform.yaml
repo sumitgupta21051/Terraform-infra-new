@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5.0.0
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -22,7 +22,7 @@ jobs:
           terraform_version: 1.5.7
 
       - name: Azure Login
-        uses: azure/login@v2.3.0
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
