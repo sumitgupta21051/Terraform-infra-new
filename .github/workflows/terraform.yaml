@@ -38,31 +38,31 @@ jobs:
         run: terraform plan
         working-directory: environment/dev
 
-  # terraform-apply:      
-  #   runs-on: ubuntu-latest
-  #   needs: terraform-init-plan
-  #   environment: dev
+  terraform-apply:      
+    runs-on: ubuntu-latest
+    needs: terraform-init-plan
+    environment: dev
 
-  #   steps:
-  #     - name: Checkout repo
-  #       uses: actions/checkout@v3
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  #     - name: Setup Terraform
-  #       uses: hashicorp/setup-terraform@v3
-  #       with:
-  #         terraform_version: 1.5.7
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.7
 
-  #     - name: Azure Login
-  #       uses: azure/login@v2
-  #       with:
-  #         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
-  #     - name: Terraform Init
-  #       run: terraform init
-  #       working-directory: environment/dev
+      - name: Terraform Init
+        run: terraform init
+        working-directory: environment/dev
 
 
-  #     - name: Terraform Apply
-  #       if: github.ref == 'refs/heads/main'
-  #       run: terraform apply -auto-approve
-  #       working-directory: environment/dev
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve
+        working-directory: environment/dev
